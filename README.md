@@ -35,6 +35,26 @@ teste de fluxo de dados: ok, todas as variáveis são declaradas antes do uso, e
 teste de ciclo: ok, não há loops
 
 
+Grafo de fluxo:
+![grafo de fluxo](./grafo-de-fluxo.png)
+
+Complexidade ciclomática (M)
+M = E - N + 2P
+E (arestas) = 12
+N (nós) = 9
+P (componentes conectados) = 2
+M = 12 - 9 + (2*2)
+M = 3 + 4 = 7
+
+Caminhos possíveis
+4-1-3-5-6-9
+4-1-2-3-5-8-9
+4-1-3-5-6-8-9
+4-1-3-5-6-7-8-9
+4-1-3-5-8-9
+4-1-3-5-6-7-9
+
+
 
 Fontes:
 [classe mysql](https://dev.mysql.com/doc/connector-j/en/connector-j-usagenotes-connect-drivermanager.html)
