@@ -9,10 +9,30 @@ string correta: "jdbc:mysql://localhost/test?user=minty&password=greatsqldb"
 erros:
     - fdbc ao invés de jdbc;
     - "=" no começo dos parâmetros, antes de user, não deveria existir
-- não necessáriamente um erro (não vai quebrar o código), mas não há um tratamento de erro efetivo, o catch existe mas não é feito nada com o erro, nenhuma mensagem é exibida nem nada
-- falha de segurança: credenciais do bd digitados no código 
+- não necessáriamente um erro (não vai quebrar o código), mas não há um tratamento de erro efetivo, os catchs existem mas não é feito nada com o erro, nenhuma mensagem é exibida nem nada
+- falha de segurança: credenciais do bd digitados no código
 
 
+testes:
+estrutura de controle: ok
+- todos os trechos de código são executados
+
+teste de condição: ok
+- if (rs.next())
+    - rs.next() = true
+    - rs.next() = false
+
+teste de fluxo de dados: ok, todas as variáveis são declaradas antes do uso, e todas são utilizadas
+- Connection conn = null;
+- String url = "fdbc:mysql://127.0.0.1/test?=user=lopes&password=123";
+- public String nome = "";
+- public boolean result = false;
+- String sql = "";
+- Connection conn = conectarDB();
+- Statement st = conn.createStatement()
+- ResultSet rs = st.executeQuery(sql);
+
+teste de ciclo: ok, não há loops
 
 
 
