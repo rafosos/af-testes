@@ -7,11 +7,13 @@ import java.sql.Statement;
 
 /** 
  * Essa classe contém métodos para conectar com o banco de dados e verificar a existência de um usuário. 
+ * @author Rafael Lourenço Ribeiro Francisco, RA 223646
+ * @version 1.0 
 */
 public class User {
     /**
      * Conecta com o banco de dados utilizando connection string padrão. Não retorna exceções.
-     * @return java.sql.Connection
+     * @return uma conexão com o banco de dados, com tipo java.sql.Connection, ou null quando caso não seja possível completar a conexão
      */
     public Connection conectarDB(){
         Connection conn = null;
@@ -40,7 +42,7 @@ public class User {
      * Verifica se o login e senha informados são compatíveis com algum usuário no banco de dados.
      * @param login
      * @param senha
-     * @return true ou false, true para usuário encontrado, false para não encontrado ou falha na pesquisa. 
+     * @return boolean, true para usuário encontrado, false para não encontrado ou falha na pesquisa. 
      */
     public boolean verificarUsuario(String login, String senha){
         String sql = "";
