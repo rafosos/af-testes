@@ -3,12 +3,6 @@
 erros no código:
 
 - O nome da classe sendo instanciada pra conectar com o banco "com.mysql.Driver.Manager" está errada, deveria ser "com.mysql.cj.jdbc.Driver"
-- string de conexão está errada:
-string atual: "fdbc:mysql://127.0.0.1/test?=user=lopes&password=123";
-string correta: "jdbc:mysql://localhost/test?user=minty&password=greatsqldb"
-erros:
-    - fdbc ao invés de jdbc;
-    - "=" no começo dos parâmetros, antes de user, não deveria existir
 - não necessáriamente um erro (não vai quebrar o código), mas não há um tratamento de erro efetivo, os catchs existem mas não é feito nada com o erro, nenhuma mensagem é exibida nem nada
 - falha de segurança: credenciais do bd digitados no código
 
@@ -39,12 +33,18 @@ Grafo de fluxo:
 ![grafo de fluxo](./grafo-de-fluxo.png)
 
 Complexidade ciclomática (M)
+
 M = E - N + 2P
-E (arestas) = 12
+
+E (arestas) = 13
+
 N (nós) = 9
+
 P (componentes conectados) = 2
-M = 12 - 9 + (2*2)
-M = 3 + 4 = 7
+
+M = 13 - 9 + (2*2)
+
+M = 4 + 4 = 8
 
 Caminhos possíveis
 4-1-3-5-6-9
