@@ -11,7 +11,7 @@ public class User {
 
         try{
             Class.forName("com.mysql.Driver.Manager").newInstance();
-            String url = "fdbc:mysql://127.0.0.1/test?=user=lopes&password=123";
+            String url = "jdbc:mysql://127.0.0.1/test?user=lopes&password=123";
             conn = DriverManager.getConnection(url);
         } catch(Exception e) { }
 
